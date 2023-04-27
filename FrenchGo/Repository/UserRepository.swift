@@ -8,6 +8,8 @@
 import Foundation
 
 class UserRepository: ObservableObject {
+    
+    var userId = ""
     static let shared = UserRepository()
     @Published var isLoggedIn: Bool {
         didSet {
@@ -17,9 +19,69 @@ class UserRepository: ObservableObject {
     
     init() {
         isLoggedIn = UserDefaults.standard.bool(forKey: "logedIn")
+        
+        guard let id = UserDefaults.standard.string(forKey: "userId") else {
+            return
+        }
+        
+        userId = id
     }
     
     func login() {
         isLoggedIn = true
     }
+    
+    func logout() {
+        isLoggedIn = false
+        UserDefaults.standard.removeObject(forKey: "userId")
+    }
+    
+    func register(registerData: UserData) async throws -> (ResponseDTO?, NetworkError?) {
+        do {
+            let (data, error) = try await RegisterService.register(userData: registerData)
+            guard let data = data else {
+                guard let error = error else {
+                    return (nil, .unexpectedError)
+                }
+                
+                return (nil, error)
+            }
+            do {
+                let response = try JSONDecoder().decode(ResponseDTO.self, from: data)
+                return (response, nil)
+            } catch {
+                return (nil, .jsonDecoder)
+            }
+        } catch {
+            return (nil, .unexpectedError)
+        }
+    }
+    
+    
+    func login(loginData: LoginData) async throws -> (UserDTO?, NetworkError?) {
+        do {
+            let(data, error) = try await LoginService.login(loginData: loginData)
+            
+            guard let data = data else {
+                guard let error = error else {
+                    return (nil, .unexpectedError)
+                }
+                
+                return (nil, error)
+            }
+            
+            do {
+                let response = try JSONDecoder().decode(UserDTO.self, from: data)
+                return (response, nil)
+            } catch {
+                do {
+                    let errorResponse = try JSONDecoder().decode(ResponseDTO.self, from: data)
+                    return (nil, errorResponse.toNetworkError())
+                } catch {
+                    return (nil, .jsonDecoder)
+                }
+            }
+        }
+    }
+
 }

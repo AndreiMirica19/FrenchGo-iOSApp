@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2ECB706F29FA4B900050BA59 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB706E29FA4B900050BA59 /* ApiEndpoint.swift */; };
+		2ECB707129FA4C4B0050BA59 /* RegisterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB707029FA4C4B0050BA59 /* RegisterProtocol.swift */; };
+		2ECB707429FA4C940050BA59 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB707329FA4C940050BA59 /* UserData.swift */; };
+		2ECB707629FA4D1F0050BA59 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB707529FA4D1F0050BA59 /* NetworkError.swift */; };
+		2ECB707829FA4D4B0050BA59 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB707729FA4D4B0050BA59 /* RegisterService.swift */; };
+		2ECB707B29FA4DED0050BA59 /* HTTPURLRESPONSE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB707A29FA4DED0050BA59 /* HTTPURLRESPONSE.swift */; };
+		2ECB707E29FA4E7A0050BA59 /* ResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB707D29FA4E7A0050BA59 /* ResponseDTO.swift */; };
+		2ECB708129FA4F090050BA59 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB708029FA4F090050BA59 /* RegisterViewModel.swift */; };
+		2ECB708329FA4FE00050BA59 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB708229FA4FE00050BA59 /* StringExtension.swift */; };
+		2ECB708529FA55840050BA59 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB708429FA55840050BA59 /* LoginData.swift */; };
+		2ECB708729FA55BC0050BA59 /* LoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB708629FA55BC0050BA59 /* LoginProtocol.swift */; };
+		2ECB708929FA55F00050BA59 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB708829FA55F00050BA59 /* LoginService.swift */; };
+		2ECB708B29FA56740050BA59 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB708A29FA56740050BA59 /* UserDTO.swift */; };
+		2ECB708D29FA57030050BA59 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB708C29FA57030050BA59 /* LoginViewModel.swift */; };
 		2EFE7CC329F7C1E3003A1171 /* FrenchGoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE7CC229F7C1E3003A1171 /* FrenchGoApp.swift */; };
 		2EFE7CC529F7C1E3003A1171 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE7CC429F7C1E3003A1171 /* Login.swift */; };
 		2EFE7CC729F7C1E4003A1171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EFE7CC629F7C1E4003A1171 /* Assets.xcassets */; };
@@ -25,6 +39,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2ECB706E29FA4B900050BA59 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
+		2ECB707029FA4C4B0050BA59 /* RegisterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocol.swift; sourceTree = "<group>"; };
+		2ECB707329FA4C940050BA59 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		2ECB707529FA4D1F0050BA59 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		2ECB707729FA4D4B0050BA59 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		2ECB707A29FA4DED0050BA59 /* HTTPURLRESPONSE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLRESPONSE.swift; sourceTree = "<group>"; };
+		2ECB707D29FA4E7A0050BA59 /* ResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDTO.swift; sourceTree = "<group>"; };
+		2ECB708029FA4F090050BA59 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		2ECB708229FA4FE00050BA59 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		2ECB708429FA55840050BA59 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
+		2ECB708629FA55BC0050BA59 /* LoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocol.swift; sourceTree = "<group>"; };
+		2ECB708829FA55F00050BA59 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		2ECB708A29FA56740050BA59 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		2ECB708C29FA57030050BA59 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2EFE7CBF29F7C1E3003A1171 /* FrenchGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrenchGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EFE7CC229F7C1E3003A1171 /* FrenchGoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrenchGoApp.swift; sourceTree = "<group>"; };
 		2EFE7CC429F7C1E3003A1171 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -54,6 +82,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2ECB706C29FA4B550050BA59 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2ECB707029FA4C4B0050BA59 /* RegisterProtocol.swift */,
+				2ECB707729FA4D4B0050BA59 /* RegisterService.swift */,
+				2ECB708629FA55BC0050BA59 /* LoginProtocol.swift */,
+				2ECB708829FA55F00050BA59 /* LoginService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2ECB706D29FA4B770050BA59 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2ECB706E29FA4B900050BA59 /* ApiEndpoint.swift */,
+				2ECB707529FA4D1F0050BA59 /* NetworkError.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		2ECB707229FA4C810050BA59 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2ECB707329FA4C940050BA59 /* UserData.swift */,
+				2ECB708429FA55840050BA59 /* LoginData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2ECB707929FA4DCA0050BA59 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2ECB707A29FA4DED0050BA59 /* HTTPURLRESPONSE.swift */,
+				2ECB708229FA4FE00050BA59 /* StringExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2ECB707C29FA4E630050BA59 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				2ECB707D29FA4E7A0050BA59 /* ResponseDTO.swift */,
+				2ECB708A29FA56740050BA59 /* UserDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		2ECB707F29FA4ED00050BA59 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2ECB708029FA4F090050BA59 /* RegisterViewModel.swift */,
+				2ECB708C29FA57030050BA59 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		2EFE7CB629F7C1E3003A1171 = {
 			isa = PBXGroup;
 			children = (
@@ -73,7 +157,13 @@
 		2EFE7CC129F7C1E3003A1171 /* FrenchGo */ = {
 			isa = PBXGroup;
 			children = (
+				2ECB707C29FA4E630050BA59 /* DTO */,
+				2ECB706C29FA4B550050BA59 /* Service */,
 				2EFE7CD829F7D64E003A1171 /* Repository */,
+				2ECB707929FA4DCA0050BA59 /* Extension */,
+				2ECB707229FA4C810050BA59 /* Data */,
+				2ECB706D29FA4B770050BA59 /* Helper */,
+				2ECB707F29FA4ED00050BA59 /* ViewModel */,
 				2EFE7CC229F7C1E3003A1171 /* FrenchGoApp.swift */,
 				2EFE7CD029F7C2F2003A1171 /* Views */,
 				2EFE7CC629F7C1E4003A1171 /* Assets.xcassets */,
@@ -202,18 +292,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ECB707629FA4D1F0050BA59 /* NetworkError.swift in Sources */,
 				2EFE7CD529F7C6EA003A1171 /* PasswordTextView.swift in Sources */,
 				2EFE7CE329F7DDAE003A1171 /* HowFrenchGoWorks.swift in Sources */,
+				2ECB707429FA4C940050BA59 /* UserData.swift in Sources */,
 				2EFE7CD729F7D0E7003A1171 /* SignUpView.swift in Sources */,
+				2ECB706F29FA4B900050BA59 /* ApiEndpoint.swift in Sources */,
+				2ECB707829FA4D4B0050BA59 /* RegisterService.swift in Sources */,
 				2EFE7CDA29F7D664003A1171 /* UserRepository.swift in Sources */,
+				2ECB708D29FA57030050BA59 /* LoginViewModel.swift in Sources */,
 				2EFE7CE029F7D92E003A1171 /* SettingsView.swift in Sources */,
+				2ECB708729FA55BC0050BA59 /* LoginProtocol.swift in Sources */,
 				2EFE7CC529F7C1E3003A1171 /* Login.swift in Sources */,
 				2EFE7CE929F7E364003A1171 /* ContactUsView.swift in Sources */,
 				2EFE7CDC29F7D6AA003A1171 /* MainTabView.swift in Sources */,
 				2EFE7CDE29F7D8C3003A1171 /* HomeView.swift in Sources */,
 				2EFE7CC329F7C1E3003A1171 /* FrenchGoApp.swift in Sources */,
+				2ECB708529FA55840050BA59 /* LoginData.swift in Sources */,
 				2EFE7CE529F7DFAF003A1171 /* NumberView.swift in Sources */,
+				2ECB707129FA4C4B0050BA59 /* RegisterProtocol.swift in Sources */,
+				2ECB708B29FA56740050BA59 /* UserDTO.swift in Sources */,
+				2ECB708129FA4F090050BA59 /* RegisterViewModel.swift in Sources */,
 				2EFE7CE729F7E207003A1171 /* AboutUsView.swift in Sources */,
+				2ECB707B29FA4DED0050BA59 /* HTTPURLRESPONSE.swift in Sources */,
+				2ECB707E29FA4E7A0050BA59 /* ResponseDTO.swift in Sources */,
+				2ECB708929FA55F00050BA59 /* LoginService.swift in Sources */,
+				2ECB708329FA4FE00050BA59 /* StringExtension.swift in Sources */,
 				2EFE7CD329F7C694003A1171 /* CustomTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

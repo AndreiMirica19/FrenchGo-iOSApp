@@ -15,6 +15,7 @@ struct Login: View {
     @State var displayError = false
     @State var keepMeLogin = false
     @State var displaySignUp = false
+    @ObservedObject var loginViewModel = LoginViewModel()
     
     var body: some View {
         ZStack {
@@ -56,13 +57,33 @@ struct Login: View {
                 Spacer()
                 
                 Button {
-                    UserRepository.shared.login()
+                    if !email.isEmpty && !password.isEmpty {
+                        loginViewModel.login(loginData: LoginData(password: password, email: email), keepLogedIn: keepMeLogin)
+                    } else {
+                        errorMessage = "You must complete the fields."
+                        displayError = true
+                    }
                 } label: {
                     Text("Login")
                         .font(.headline)
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(.red)
+                .alert("Error", isPresented: $displayError, actions: {}, message: {
+                    Text(errorMessage)
+                })
+                .onReceive(loginViewModel.$response, perform: { response in
+                    guard response.0 != nil else {
+                        guard let error = response.1 else {
+                            return
+                        }
+                        errorMessage = error.getErrorMessage()
+                        displayError = true
+                        return
+                    }
+                    
+                    UserRepository.shared.login()
+                })
                 
                 HStack {
                     Text("Don't you have an account?")

@@ -14,7 +14,7 @@ struct SettingsView: View {
                 Section {
                     
                     Button {
-                        
+                        UserRepository.shared.logout()
                     } label: {
                         Text("Log out")
                     }
