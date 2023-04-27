@@ -83,5 +83,26 @@ class UserRepository: ObservableObject {
             }
         }
     }
-
+    
+    func initialQuiz() async throws -> (QuizDTO?, NetworkError?) {
+        do {
+            let (data, error) = try await InitialQuizService.intialQuiz()
+            
+            guard let data = data else {
+                guard let error = error else {
+                    return (nil, .unexpectedError)
+                }
+                
+                return (nil, error)
+            }
+            
+            do {
+                let quiz = try JSONDecoder().decode(QuizDTO.self, from: data)
+                return (quiz, nil)
+            } catch {
+                
+                return (nil, .jsonDecoder)
+            }
+        }
+    }
 }
