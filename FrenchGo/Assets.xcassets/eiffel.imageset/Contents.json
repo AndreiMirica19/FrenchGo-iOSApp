@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "High_resolution_wallpaper_background_ID_77701753836@1x.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "High_resolution_wallpaper_background_ID_77701753836@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "High_resolution_wallpaper_background_ID_77701753836@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
