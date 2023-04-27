@@ -21,6 +21,9 @@
 		2ECB708929FA55F00050BA59 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB708829FA55F00050BA59 /* LoginService.swift */; };
 		2ECB708B29FA56740050BA59 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB708A29FA56740050BA59 /* UserDTO.swift */; };
 		2ECB708D29FA57030050BA59 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB708C29FA57030050BA59 /* LoginViewModel.swift */; };
+		2ECB708F29FA7B2E0050BA59 /* QUizCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB708E29FA7B2E0050BA59 /* QUizCardView.swift */; };
+		2ECB709129FA7F8F0050BA59 /* LessonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB709029FA7F8F0050BA59 /* LessonCardView.swift */; };
+		2ECB709329FA827E0050BA59 /* LockedLessonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB709229FA827E0050BA59 /* LockedLessonCardView.swift */; };
 		2EFE7CC329F7C1E3003A1171 /* FrenchGoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE7CC229F7C1E3003A1171 /* FrenchGoApp.swift */; };
 		2EFE7CC529F7C1E3003A1171 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE7CC429F7C1E3003A1171 /* Login.swift */; };
 		2EFE7CC729F7C1E4003A1171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EFE7CC629F7C1E4003A1171 /* Assets.xcassets */; };
@@ -53,6 +56,9 @@
 		2ECB708829FA55F00050BA59 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		2ECB708A29FA56740050BA59 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		2ECB708C29FA57030050BA59 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2ECB708E29FA7B2E0050BA59 /* QUizCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QUizCardView.swift; sourceTree = "<group>"; };
+		2ECB709029FA7F8F0050BA59 /* LessonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCardView.swift; sourceTree = "<group>"; };
+		2ECB709229FA827E0050BA59 /* LockedLessonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedLessonCardView.swift; sourceTree = "<group>"; };
 		2EFE7CBF29F7C1E3003A1171 /* FrenchGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrenchGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EFE7CC229F7C1E3003A1171 /* FrenchGoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrenchGoApp.swift; sourceTree = "<group>"; };
 		2EFE7CC429F7C1E3003A1171 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -199,6 +205,9 @@
 				2EFE7CD229F7C694003A1171 /* CustomTextView.swift */,
 				2EFE7CD429F7C6EA003A1171 /* PasswordTextView.swift */,
 				2EFE7CE429F7DFAF003A1171 /* NumberView.swift */,
+				2ECB708E29FA7B2E0050BA59 /* QUizCardView.swift */,
+				2ECB709029FA7F8F0050BA59 /* LessonCardView.swift */,
+				2ECB709229FA827E0050BA59 /* LockedLessonCardView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -314,8 +323,11 @@
 				2ECB708B29FA56740050BA59 /* UserDTO.swift in Sources */,
 				2ECB708129FA4F090050BA59 /* RegisterViewModel.swift in Sources */,
 				2EFE7CE729F7E207003A1171 /* AboutUsView.swift in Sources */,
+				2ECB709329FA827E0050BA59 /* LockedLessonCardView.swift in Sources */,
 				2ECB707B29FA4DED0050BA59 /* HTTPURLRESPONSE.swift in Sources */,
+				2ECB708F29FA7B2E0050BA59 /* QUizCardView.swift in Sources */,
 				2ECB707E29FA4E7A0050BA59 /* ResponseDTO.swift in Sources */,
+				2ECB709129FA7F8F0050BA59 /* LessonCardView.swift in Sources */,
 				2ECB708929FA55F00050BA59 /* LoginService.swift in Sources */,
 				2ECB708329FA4FE00050BA59 /* StringExtension.swift in Sources */,
 				2EFE7CD329F7C694003A1171 /* CustomTextView.swift in Sources */,

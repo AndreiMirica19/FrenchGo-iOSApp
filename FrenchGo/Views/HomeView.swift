@@ -9,7 +9,44 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack(alignment: .leading) {
+                Section {
+                    QUizCardView()
+                        .frame(height: 180)
+                    .padding(.top)
+                } header: {
+                    Text("Current Lesson")
+                        .font(.title)
+                        .fontWeight(.black)
+                }
+                
+                Spacer(minLength: 72)
+                
+                Section {
+                    ScrollView(.horizontal, showsIndicators: true) {
+                        HStack {
+                            ForEach(0...8, id: \.self) { index in
+                                if index < 4 {
+                                    LessonCardView()
+                                        .frame(height: 180)
+                                        .padding()
+                                } else {
+                                    LockedLessonCardView()
+                                        .frame(height: 180)
+                                        .padding()
+                                }
+                            }
+                            
+                        }
+                    }
+                } header: {
+                    Text("All lessons")
+                        .font(.title)
+                        .fontWeight(.black)
+                }
+            }.frame(width: .infinity)
+        }.padding()
     }
 }
 
