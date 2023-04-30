@@ -9,6 +9,10 @@ struct QuizView: View {
     @State var selectedAnswerIndex: Int? = nil
     @State var rightAnswers = 0
     @State var alertIsShown = false
+    @State var errorIsShown = false
+    @State var errorMessage = ""
+    @StateObject var quizViewModel = QuizViewModel()
+    
     var isFirstQuiz: Bool
     
     var body: some View {
@@ -57,9 +61,25 @@ struct QuizView: View {
                     
                 }
             }.padding()
+                .onReceive(quizViewModel.$updatedLevelResponse) { response in
+                    guard let _ = response.0 else {
+                        guard let error = response.1 else {
+                            return
+                        }
+                        errorIsShown = true
+                        errorMessage = error.getErrorMessage()
+                        return
+                    }
+                }
+                .alert(errorMessage, isPresented: $errorIsShown) {
+                    Button("OK", role: .cancel){}
+                }
+            
                 .alert(scoreAlertTitle(), isPresented: $alertIsShown) {
                     if isFirstQuiz {
-                        Button("OK", role: .cancel) {}
+                        Button("OK", role: .cancel) {
+                            quizViewModel.updateLevel(level: calculateLanguageLevel().rawValue)
+                        }
                     } else {
                         if correctAnswersPercentage() < 80 {
                             Button("Retake", role: .cancel) {
@@ -123,17 +143,16 @@ struct QuizView: View {
         return "You got \(score)% right. \(action)"
     }
     
-    func calculateLanguageLevel() -> String {
+    func calculateLanguageLevel() -> CourseDifficulty {
         switch correctAnswersPercentage() {
         case 0...50 :
-            return "Beginner"
+            return .beginner
         case 50...75 :
-            return "Intermediate"
+            return .intermediate
         case 75...100 :
-            return "Advanced"
-        
+            return .advance
         default:
-            return ""
+            return .beginner
         }
     }
 }

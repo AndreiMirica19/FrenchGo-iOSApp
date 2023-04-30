@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E52F0E729FE3EB100DB5890 /* UserDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52F0E629FE3EB100DB5890 /* UserDetailsProtocol.swift */; };
+		2E52F0E929FE3EFB00DB5890 /* UserDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52F0E829FE3EFB00DB5890 /* UserDetailsService.swift */; };
+		2E52F0EB29FE40EC00DB5890 /* CourseDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52F0EA29FE40EC00DB5890 /* CourseDifficulty.swift */; };
+		2E52F0ED29FE44D900DB5890 /* UpdateUserLevelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52F0EC29FE44D900DB5890 /* UpdateUserLevelProtocol.swift */; };
+		2E52F0EF29FE454900DB5890 /* UpdateUserLevelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52F0EE29FE454900DB5890 /* UpdateUserLevelService.swift */; };
+		2E52F0F129FE46F800DB5890 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52F0F029FE46F800DB5890 /* QuizViewModel.swift */; };
 		2ECB706F29FA4B900050BA59 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB706E29FA4B900050BA59 /* ApiEndpoint.swift */; };
 		2ECB707129FA4C4B0050BA59 /* RegisterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB707029FA4C4B0050BA59 /* RegisterProtocol.swift */; };
 		2ECB707429FA4C940050BA59 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB707329FA4C940050BA59 /* UserData.swift */; };
@@ -47,6 +53,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E52F0E629FE3EB100DB5890 /* UserDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsProtocol.swift; sourceTree = "<group>"; };
+		2E52F0E829FE3EFB00DB5890 /* UserDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsService.swift; sourceTree = "<group>"; };
+		2E52F0EA29FE40EC00DB5890 /* CourseDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDifficulty.swift; sourceTree = "<group>"; };
+		2E52F0EC29FE44D900DB5890 /* UpdateUserLevelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserLevelProtocol.swift; sourceTree = "<group>"; };
+		2E52F0EE29FE454900DB5890 /* UpdateUserLevelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserLevelService.swift; sourceTree = "<group>"; };
+		2E52F0F029FE46F800DB5890 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		2ECB706E29FA4B900050BA59 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
 		2ECB707029FA4C4B0050BA59 /* RegisterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocol.swift; sourceTree = "<group>"; };
 		2ECB707329FA4C940050BA59 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -107,6 +119,10 @@
 				2ECB708829FA55F00050BA59 /* LoginService.swift */,
 				2ECB709A29FA9D480050BA59 /* InitialQuizProtocol.swift */,
 				2ECB709C29FA9D8A0050BA59 /* InitialQuizService.swift */,
+				2E52F0E629FE3EB100DB5890 /* UserDetailsProtocol.swift */,
+				2E52F0E829FE3EFB00DB5890 /* UserDetailsService.swift */,
+				2E52F0EC29FE44D900DB5890 /* UpdateUserLevelProtocol.swift */,
+				2E52F0EE29FE454900DB5890 /* UpdateUserLevelService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -116,6 +132,7 @@
 			children = (
 				2ECB706E29FA4B900050BA59 /* ApiEndpoint.swift */,
 				2ECB707529FA4D1F0050BA59 /* NetworkError.swift */,
+				2E52F0EA29FE40EC00DB5890 /* CourseDifficulty.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -154,6 +171,7 @@
 				2ECB708029FA4F090050BA59 /* RegisterViewModel.swift */,
 				2ECB708C29FA57030050BA59 /* LoginViewModel.swift */,
 				2ECB709E29FA9F100050BA59 /* HomeViewModel.swift */,
+				2E52F0F029FE46F800DB5890 /* QuizViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -320,16 +338,20 @@
 				2ECB709D29FA9D8A0050BA59 /* InitialQuizService.swift in Sources */,
 				2EFE7CD529F7C6EA003A1171 /* PasswordTextView.swift in Sources */,
 				2EFE7CE329F7DDAE003A1171 /* HowFrenchGoWorks.swift in Sources */,
+				2E52F0ED29FE44D900DB5890 /* UpdateUserLevelProtocol.swift in Sources */,
 				2ECB707429FA4C940050BA59 /* UserData.swift in Sources */,
 				2EFE7CD729F7D0E7003A1171 /* SignUpView.swift in Sources */,
 				2ECB706F29FA4B900050BA59 /* ApiEndpoint.swift in Sources */,
+				2E52F0E729FE3EB100DB5890 /* UserDetailsProtocol.swift in Sources */,
 				2ECB707829FA4D4B0050BA59 /* RegisterService.swift in Sources */,
 				2EFE7CDA29F7D664003A1171 /* UserRepository.swift in Sources */,
 				2ECB708D29FA57030050BA59 /* LoginViewModel.swift in Sources */,
+				2E52F0F129FE46F800DB5890 /* QuizViewModel.swift in Sources */,
 				2EFE7CE029F7D92E003A1171 /* SettingsView.swift in Sources */,
 				2ECB709529FA864B0050BA59 /* QuizView.swift in Sources */,
 				2ECB708729FA55BC0050BA59 /* LoginProtocol.swift in Sources */,
 				2EFE7CC529F7C1E3003A1171 /* Login.swift in Sources */,
+				2E52F0EB29FE40EC00DB5890 /* CourseDifficulty.swift in Sources */,
 				2ECB709B29FA9D480050BA59 /* InitialQuizProtocol.swift in Sources */,
 				2EFE7CE929F7E364003A1171 /* ContactUsView.swift in Sources */,
 				2EFE7CDC29F7D6AA003A1171 /* MainTabView.swift in Sources */,
@@ -347,8 +369,10 @@
 				2ECB707B29FA4DED0050BA59 /* HTTPURLRESPONSE.swift in Sources */,
 				2ECB708F29FA7B2E0050BA59 /* QUizCardView.swift in Sources */,
 				2ECB707E29FA4E7A0050BA59 /* ResponseDTO.swift in Sources */,
+				2E52F0EF29FE454900DB5890 /* UpdateUserLevelService.swift in Sources */,
 				2ECB709129FA7F8F0050BA59 /* LessonCardView.swift in Sources */,
 				2ECB708929FA55F00050BA59 /* LoginService.swift in Sources */,
+				2E52F0E929FE3EFB00DB5890 /* UserDetailsService.swift in Sources */,
 				2ECB708329FA4FE00050BA59 /* StringExtension.swift in Sources */,
 				2EFE7CD329F7C694003A1171 /* CustomTextView.swift in Sources */,
 			);

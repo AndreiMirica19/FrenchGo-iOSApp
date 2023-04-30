@@ -84,6 +84,50 @@ class UserRepository: ObservableObject {
         }
     }
     
+    func userDetails() async throws -> (UserDTO?, NetworkError?) {
+        let (data, error) = try await UserDetailsService.userDetails(userId: userId)
+        
+        guard let data = data else {
+            guard let error = error else {
+                return (nil, .unexpectedError)
+            }
+            
+            return (nil, error)
+        }
+        
+        do {
+            let response = try JSONDecoder().decode(UserDTO.self, from: data)
+            return (response, nil)
+        } catch {
+            do {
+                let errorResponse = try JSONDecoder().decode(ResponseDTO.self, from: data)
+                return (nil, errorResponse.toNetworkError())
+            } catch {
+                return (nil, .jsonDecoder)
+            }
+        }
+    }
+    
+    func updateUserLevel(level: String) async throws -> (UserDTO?, NetworkError?) {
+        let (data, error) = try await UpdateUserLevelService.updateUserLevel(userId: userId, level: level)
+        
+        guard let data = data else {
+            guard let error = error else {
+                return (nil, .unexpectedError)
+            }
+            
+            return (nil, error)
+        }
+        
+        do {
+            let response = try JSONDecoder().decode(UserDTO.self, from: data)
+            return (response, nil)
+        } catch {
+            return (nil, .jsonDecoder)
+        }
+    }
+        
+    
     func initialQuiz() async throws -> (QuizDTO?, NetworkError?) {
         do {
             let (data, error) = try await InitialQuizService.intialQuiz()

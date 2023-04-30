@@ -62,8 +62,32 @@ struct HomeView: View {
                 }.frame(width: .infinity)
             }.padding()
                 .onAppear {
-                    homeViewModel.quiz()
-            }
+                    homeViewModel.userDetails()
+                    //homeViewModel.quiz()
+                }
+                .onReceive(homeViewModel.$userDetailsResponse) { response in
+                    guard let userDetails = response.0 else {
+                        guard let error = response.1 else {
+                            return
+                        }
+                        alertMessage = error.getErrorMessage()
+                        alertIsShown = true
+                        return
+                    }
+                    
+                    let courseDifficulty = CourseDifficulty(rawValue: userDetails.level)
+                    
+                    switch courseDifficulty {
+                    case .beginner:
+                        break
+                    case .intermediate:
+                        break
+                    case .advance:
+                        break
+                    case .none:
+                        homeViewModel.quiz()
+                    }
+                }
                 .onReceive(homeViewModel.$quizResponse) { response in
                     guard let quiz = response.0 else {
                         guard let error = response.1 else {
