@@ -15,4 +15,6 @@ enum ApiEndpoint: String {
     case initialQuiz = "/initialQuiz"
     case userDetails = "/userDetails"
     case updateUserLevel = "/userLevel"
+    case course = "/course"
+    case incrementLesson = "/incrementLesson"
 }

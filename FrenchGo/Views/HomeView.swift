@@ -11,7 +11,9 @@ struct HomeView: View {
     @StateObject var homeViewModel = HomeViewModel()
     @State var alertIsShown = false
     @State var alertMessage = ""
-    @State var intialQuiz: QuizDTO? = nil
+    @State var intialQuiz: InitialQuizDTO? = nil
+    @State var course: CourseDTO? = nil
+    @State var userDetails: UserDTO? = nil
     
     var body: some View {
         NavigationStack {
@@ -21,12 +23,24 @@ struct HomeView: View {
                         
                         if let intialQuiz = intialQuiz {
                             NavigationLink {
-                                QuizView(quiz: intialQuiz, isFirstQuiz: true)
+                                InitialQuizView(quiz: intialQuiz)
                             } label: {
+                                
                                 QUizCardView()
                                     .frame(height: 180)
                                     .padding(.top)
                                     .tint(.black)
+                                
+                            }
+                        }  else {
+                            if let course = course, let userDetails = userDetails {
+                                NavigationLink {
+                                    LessonView(lesson: course.lessons[userDetails.lastLessonIndex])
+                                } label: {
+                                    LessonCardView(lesson: course.lessons[userDetails.lastLessonIndex], lessonNumber: (userDetails.lastLessonIndex + 1), courseName: course.courseName)
+                                        .frame(height: 240)
+                                        .padding()
+                                }
                             }
                         }
                     } header: {
@@ -40,18 +54,20 @@ struct HomeView: View {
                     Section {
                         ScrollView(.horizontal, showsIndicators: true) {
                             HStack {
-                                ForEach(0...8, id: \.self) { index in
-                                    if index < 4 {
-                                        LessonCardView()
-                                            .frame(height: 180)
-                                            .padding()
-                                    } else {
-                                        LockedLessonCardView()
-                                            .frame(height: 180)
-                                            .padding()
+                                if let course = course, let userDetails = userDetails {
+                                    ForEach(0...course.lessons.count - 1, id: \.self) { index in
+                                        if index <= userDetails.lastLessonIndex {
+                                            LessonCardView(lesson: course.lessons[index], lessonNumber: (index + 1), courseName: course.courseName)
+                                                .frame(height: 180)
+                                                .padding()
+                                        } else {
+                                            LockedLessonCardView(lesson: course.lessons[index], lessonNumber: (index + 1), courseName: course.courseName)
+                                                .frame(height: 180)
+                                                .padding()
+                                        }
                                     }
+                                    
                                 }
-                                
                             }
                         }
                     } header: {
@@ -75,18 +91,30 @@ struct HomeView: View {
                         return
                     }
                     
+                    self.userDetails = userDetails
+                    
                     let courseDifficulty = CourseDifficulty(rawValue: userDetails.level)
                     
                     switch courseDifficulty {
-                    case .beginner:
-                        break
-                    case .intermediate:
-                        break
-                    case .advance:
-                        break
+                    case .beginner, .intermediate, .advance:
+                        homeViewModel.getCourse(level: userDetails.level)
+                        
                     case .none:
                         homeViewModel.quiz()
                     }
+                }
+                .onReceive(homeViewModel.$courseResponse) { response in
+                    guard let course = response.0 else {
+                        guard let error = response.1 else {
+                            return
+                        }
+                        
+                        alertMessage = error.getErrorMessage()
+                        alertIsShown = true
+                        return
+                    }
+                    
+                    self.course = course
                 }
                 .onReceive(homeViewModel.$quizResponse) { response in
                     guard let quiz = response.0 else {

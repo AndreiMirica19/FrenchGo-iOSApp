@@ -126,9 +126,9 @@ class UserRepository: ObservableObject {
             return (nil, .jsonDecoder)
         }
     }
-        
     
-    func initialQuiz() async throws -> (QuizDTO?, NetworkError?) {
+    
+    func initialQuiz() async throws -> (InitialQuizDTO?, NetworkError?) {
         do {
             let (data, error) = try await InitialQuizService.intialQuiz()
             
@@ -141,12 +141,50 @@ class UserRepository: ObservableObject {
             }
             
             do {
-                let quiz = try JSONDecoder().decode(QuizDTO.self, from: data)
+                let quiz = try JSONDecoder().decode(InitialQuizDTO.self, from: data)
                 return (quiz, nil)
             } catch {
                 
                 return (nil, .jsonDecoder)
             }
+        }
+    }
+    
+    func getCourse(level: String) async throws -> (CourseDTO?, NetworkError?) {
+        let (data, error) = try await CourseService.course(level: level)
+        
+        guard let data = data else {
+            guard let error = error else {
+                return (nil, .unexpectedError)
+            }
+            
+            return (nil, error)
+        }
+        
+        do {
+            let course = try JSONDecoder().decode(CourseDTO.self, from: data)
+            return (course, nil)
+        } catch {
+            
+            return (nil, .jsonDecoder)
+        }
+    }
+    
+    func incrementLesson() async throws -> (UserDTO?, NetworkError?) {
+        let (data, error) = try await IncrementLessonService.incrementLesson(userId: userId)
+        
+        guard let data = data else {
+            guard let error = error else {
+                return (nil, .unexpectedError)
+            }
+            return (nil, error)
+        }
+        
+        do {
+            let user = try JSONDecoder().decode(UserDTO.self, from: data)
+            return (user, nil)
+        } catch {
+            return (nil, .jsonDecoder)
         }
     }
 }

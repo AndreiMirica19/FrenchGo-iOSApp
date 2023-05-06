@@ -1,18 +1,22 @@
+//
+//  InitialQuizView.swift
+//  FrenchGo
+//
+//  Created by Andrei Mirica on 06.05.2023.
+//
 
 import SwiftUI
 
-struct QuizView: View {
-    
-    let quiz: QuizDTO
+struct InitialQuizView: View {
+    let quiz: InitialQuizDTO
     
     @State var currentQuestion = 0
     @State var selectedAnswerIndex: Int? = nil
-    @State var rightAnswers = 0
+    @State var rightAnswers: [Difficulty] = []
     @State var alertIsShown = false
     @State var errorIsShown = false
     @State var errorMessage = ""
     @StateObject var quizViewModel = QuizViewModel()
-    
     
     var body: some View {
         VStack {
@@ -24,7 +28,9 @@ struct QuizView: View {
                 
                 selectedAnswerIndex = answerIndex
                 if selectedAnswerIndex == quiz.questions[currentQuestion].rightAnswerIndex {
-                    rightAnswers += 1
+                    if let difficulty = Difficulty(rawValue: quiz.questions[currentQuestion].difficulty) {
+                        rightAnswers.append(difficulty)
+                    }
                 }
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -46,35 +52,18 @@ struct QuizView: View {
                         return
                     }
                 }
-                .onReceive(quizViewModel.$lessonUpdatedResponse) { response in
-                    guard let _ = response.0 else {
-                        guard let error = response.1 else {
-                            return
-                        }
-                        errorIsShown = true
-                        errorMessage = error.getErrorMessage()
-                        return
-                    }
-                }
+        
                 .alert(errorMessage, isPresented: $errorIsShown) {
                     Button("OK", role: .cancel){}
                 }
             
-                .alert(quizViewModel.scoreAlertTitle(rightAnswers: rightAnswers, questionsCount: quiz.questions.count), isPresented: $alertIsShown) {
-                    
-                    if quizViewModel.correctAnswersPercentage(rightAnswers: rightAnswers, questionsCount: quiz.questions.count) < 80 {
-                            Button("Retake", role: .cancel) {
-                                currentQuestion = 0
-                                selectedAnswerIndex = nil
-                                rightAnswers = 0
-                            }
-                        } else {
+                .alert("Congratulation", isPresented: $alertIsShown) {
                             Button("OK", role: .cancel) {
-                                quizViewModel.incrementLesson()
-                            }
+                               quizViewModel.updateLevel(level: quizViewModel.calculateLevel(rightAnswers: rightAnswers, totalQuestions: quiz.questions.count).rawValue)
+
                     }
                 } message: {
-                    Text("\(quizViewModel.scoreAlertMessage(rightAnswers: rightAnswers, questionsCount: quiz.questions.count))")
+                    Text("You are a \(quizViewModel.calculateLevel(rightAnswers: rightAnswers, totalQuestions: quiz.questions.count).rawValue)")
                 }
             
             Spacer()
@@ -82,28 +71,33 @@ struct QuizView: View {
     }
 }
 
-struct QuizView_Previews: PreviewProvider {
+struct InitialQuizView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizView(quiz: QuizDTO(questions: [
-            Question(
+        InitialQuizView(quiz: InitialQuizDTO(questions: [
+            InitialQuizQuestion(
                 questionText: "What is the capital of France?",
                 questionAswers: ["Berlin", "Paris", "London"],
-                rightAnswerIndex: 1
+                rightAnswerIndex: 1,
+                difficulty: "Easy"
             ),
-            Question(
+            InitialQuizQuestion(
                 questionText: "What is the largest planet in our solar system?",
                 questionAswers: ["Jupiter", "Mars", "Venus"],
-                rightAnswerIndex: 0
+                rightAnswerIndex: 0,
+                difficulty: "Easy"
+                
             ),
-            Question(
+            InitialQuizQuestion(
                 questionText: "What is the currency of Japan?",
                 questionAswers: ["Yen", "Dollar", "Euro"],
-                rightAnswerIndex: 0
+                rightAnswerIndex: 0,
+                difficulty: "Easy"
             ),
-            Question(
+            InitialQuizQuestion(
                 questionText: "Who painted the Mona Lisa?",
                 questionAswers: ["Vincent Van Gogh", "Leonardo Da Vinci", "Pablo Picasso"],
-                rightAnswerIndex: 1
+                rightAnswerIndex: 1,
+                difficulty: "Easy"
             )
         ]))
     }

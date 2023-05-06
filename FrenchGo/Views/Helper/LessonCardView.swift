@@ -8,22 +8,26 @@
 import SwiftUI
 
 struct LessonCardView: View {
+    var lesson: LessonDTO
+    var lessonNumber: Int
+    var courseName: String
+    
     var body: some View {
         VStack {
-            Text("Debutant Course")
+            Text(courseName)
                 .font(.largeTitle)
             .fontWeight(.black)
             .foregroundColor(.white)
             
             
-            Text("Lesson 1")
+            Text("Lesson \(lessonNumber)")
                 .font(.largeTitle)
             .fontWeight(.black)
             .foregroundColor(.white)
 
             Spacer()
             
-            Text("French Present Tense")
+            Text(lesson.title)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
                 .fontWeight(.black)
@@ -41,6 +45,6 @@ struct LessonCardView: View {
 
 struct LessonCardView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonCardView()
+        LessonCardView(lesson: LessonDTO(title: "", text: "", quiz: QuizDTO(questions: [])), lessonNumber: 0, courseName: "")
     }
 }

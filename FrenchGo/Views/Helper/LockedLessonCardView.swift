@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct LockedLessonCardView: View {
+    var lesson: LessonDTO
+    var lessonNumber: Int
+    var courseName: String
+    
     var body: some View {
         ZStack {
-            LessonCardView()
+            LessonCardView(lesson: lesson, lessonNumber: lessonNumber, courseName: courseName)
                 .blur(radius: 2)
             
             Image(systemName: "lock.circle")
@@ -23,6 +27,6 @@ struct LockedLessonCardView: View {
 
 struct LockedLessonCardView_Previews: PreviewProvider {
     static var previews: some View {
-        LockedLessonCardView()
+        LockedLessonCardView(lesson: LessonDTO(title: "", text: "", quiz: QuizDTO(questions: [])), lessonNumber: 0, courseName: "")
     }
 }
