@@ -32,7 +32,11 @@ class QuizViewModel: ObservableObject {
     }
     
     func correctAnswersPercentage(rightAnswers: Int, questionsCount: Int) -> Int {
-        Int(Double(rightAnswers) / Double(questionsCount) * 100)
+        guard questionsCount > 0 else {
+                return 0
+            }
+        
+        return Int(Double(rightAnswers) / Double(questionsCount) * 100)
     }
     
     func scoreAlertTitle(rightAnswers: Int, questionsCount: Int) -> String {

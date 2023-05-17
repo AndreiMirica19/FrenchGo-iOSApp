@@ -48,6 +48,7 @@
 		2ECB709B29FA9D480050BA59 /* InitialQuizProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB709A29FA9D480050BA59 /* InitialQuizProtocol.swift */; };
 		2ECB709D29FA9D8A0050BA59 /* InitialQuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB709C29FA9D8A0050BA59 /* InitialQuizService.swift */; };
 		2ECB709F29FA9F100050BA59 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB709E29FA9F100050BA59 /* HomeViewModel.swift */; };
+		2ED63DEE2A14BC970032AC39 /* IntitialQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED63DED2A14BC970032AC39 /* IntitialQuizTests.swift */; };
 		2EFE7CC329F7C1E3003A1171 /* FrenchGoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE7CC229F7C1E3003A1171 /* FrenchGoApp.swift */; };
 		2EFE7CC529F7C1E3003A1171 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE7CC429F7C1E3003A1171 /* Login.swift */; };
 		2EFE7CC729F7C1E4003A1171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EFE7CC629F7C1E4003A1171 /* Assets.xcassets */; };
@@ -64,6 +65,16 @@
 		2EFE7CE729F7E207003A1171 /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE7CE629F7E207003A1171 /* AboutUsView.swift */; };
 		2EFE7CE929F7E364003A1171 /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE7CE829F7E364003A1171 /* ContactUsView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2ED63DEF2A14BC970032AC39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EFE7CB729F7C1E3003A1171 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EFE7CBE29F7C1E3003A1171;
+			remoteInfo = FrenchGo;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2E1A67322A067272007B4F29 /* InitialQuizDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialQuizDTO.swift; sourceTree = "<group>"; };
@@ -107,6 +118,8 @@
 		2ECB709A29FA9D480050BA59 /* InitialQuizProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialQuizProtocol.swift; sourceTree = "<group>"; };
 		2ECB709C29FA9D8A0050BA59 /* InitialQuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialQuizService.swift; sourceTree = "<group>"; };
 		2ECB709E29FA9F100050BA59 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2ED63DEB2A14BC970032AC39 /* FrenchGoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrenchGoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ED63DED2A14BC970032AC39 /* IntitialQuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntitialQuizTests.swift; sourceTree = "<group>"; };
 		2EFE7CBF29F7C1E3003A1171 /* FrenchGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrenchGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EFE7CC229F7C1E3003A1171 /* FrenchGoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrenchGoApp.swift; sourceTree = "<group>"; };
 		2EFE7CC429F7C1E3003A1171 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -126,6 +139,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2ED63DE82A14BC970032AC39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EFE7CBC29F7C1E3003A1171 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -209,10 +229,19 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		2ED63DEC2A14BC970032AC39 /* FrenchGoTests */ = {
+			isa = PBXGroup;
+			children = (
+				2ED63DED2A14BC970032AC39 /* IntitialQuizTests.swift */,
+			);
+			path = FrenchGoTests;
+			sourceTree = "<group>";
+		};
 		2EFE7CB629F7C1E3003A1171 = {
 			isa = PBXGroup;
 			children = (
 				2EFE7CC129F7C1E3003A1171 /* FrenchGo */,
+				2ED63DEC2A14BC970032AC39 /* FrenchGoTests */,
 				2EFE7CC029F7C1E3003A1171 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -221,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				2EFE7CBF29F7C1E3003A1171 /* FrenchGo.app */,
+				2ED63DEB2A14BC970032AC39 /* FrenchGoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -306,6 +336,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2ED63DEA2A14BC970032AC39 /* FrenchGoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2ED63DF32A14BC970032AC39 /* Build configuration list for PBXNativeTarget "FrenchGoTests" */;
+			buildPhases = (
+				2ED63DE72A14BC970032AC39 /* Sources */,
+				2ED63DE82A14BC970032AC39 /* Frameworks */,
+				2ED63DE92A14BC970032AC39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2ED63DF02A14BC970032AC39 /* PBXTargetDependency */,
+			);
+			name = FrenchGoTests;
+			productName = FrenchGoTests;
+			productReference = 2ED63DEB2A14BC970032AC39 /* FrenchGoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2EFE7CBE29F7C1E3003A1171 /* FrenchGo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EFE7CCD29F7C1E4003A1171 /* Build configuration list for PBXNativeTarget "FrenchGo" */;
@@ -333,6 +381,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					2ED63DEA2A14BC970032AC39 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 2EFE7CBE29F7C1E3003A1171;
+					};
 					2EFE7CBE29F7C1E3003A1171 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -352,11 +404,19 @@
 			projectRoot = "";
 			targets = (
 				2EFE7CBE29F7C1E3003A1171 /* FrenchGo */,
+				2ED63DEA2A14BC970032AC39 /* FrenchGoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2ED63DE92A14BC970032AC39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EFE7CBD29F7C1E3003A1171 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,6 +429,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2ED63DE72A14BC970032AC39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2ED63DEE2A14BC970032AC39 /* IntitialQuizTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EFE7CBB29F7C1E3003A1171 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,7 +500,49 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2ED63DF02A14BC970032AC39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EFE7CBE29F7C1E3003A1171 /* FrenchGo */;
+			targetProxy = 2ED63DEF2A14BC970032AC39 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		2ED63DF12A14BC970032AC39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FrenchGoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FrenchGo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FrenchGo";
+			};
+			name = Debug;
+		};
+		2ED63DF22A14BC970032AC39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FrenchGoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FrenchGo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FrenchGo";
+			};
+			name = Release;
+		};
 		2EFE7CCB29F7C1E4003A1171 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -606,6 +716,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2ED63DF32A14BC970032AC39 /* Build configuration list for PBXNativeTarget "FrenchGoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2ED63DF12A14BC970032AC39 /* Debug */,
+				2ED63DF22A14BC970032AC39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2EFE7CBA29F7C1E3003A1171 /* Build configuration list for PBXProject "FrenchGo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
