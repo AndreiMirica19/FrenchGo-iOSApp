@@ -13,11 +13,12 @@ struct QuestionHeaderView: View {
     
     var body: some View {
         VStack {
-            Text("Question \(currentQuestion + 1)")
+            MarkerFeltWideTextView(text: "Question \(currentQuestion + 1)", textSize: 34)
                 .fontWeight(.black)
                 .font(.largeTitle)
+                .foregroundColor(Color("DarkGreen"))
             
-            Text(questionText)
+            MarkerFeltWideTextView(text: questionText, textSize: 30)
                 .fontWeight(.bold)
                 .font(.title)
                 .padding(.top)

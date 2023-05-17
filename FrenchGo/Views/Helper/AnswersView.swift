@@ -25,10 +25,8 @@ struct AnswersView: View {
                 } label: {
                     HStack {
                         Spacer()
-                        Text(answer)
+                        MarkelFeltThinTextView(text: answer, textSize: 28)
                             .foregroundColor(.white)
-                            .font(.title)
-                            .fontWeight(.bold)
                         Spacer()
                     }
                     .padding()

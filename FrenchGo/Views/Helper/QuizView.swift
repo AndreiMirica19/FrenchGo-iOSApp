@@ -4,6 +4,7 @@ import SwiftUI
 struct QuizView: View {
     
     let quiz: QuizDTO
+    var isPreviousQuestion: Bool
     
     @State var currentQuestion = 0
     @State var selectedAnswerIndex: Int? = nil
@@ -17,10 +18,11 @@ struct QuizView: View {
     var body: some View {
         VStack {
             QuestionHeaderView(currentQuestion: currentQuestion, questionText: quiz.questions[currentQuestion].questionText)
+                .padding()
             
             Spacer()
             
-            AnswersView(qustionAnswers: quiz.questions[currentQuestion].questionAswers, rightAnswerIndex: quiz.questions[currentQuestion].rightAnswerIndex, selectedAnswerIndex: selectedAnswerIndex) { answerIndex in
+            AnswersView(qustionAnswers: quiz.questions[currentQuestion].questionAswers.shuffled(), rightAnswerIndex: quiz.questions[currentQuestion].rightAnswerIndex, selectedAnswerIndex: selectedAnswerIndex) { answerIndex in
                 
                 selectedAnswerIndex = answerIndex
                 if selectedAnswerIndex == quiz.questions[currentQuestion].rightAnswerIndex {
@@ -70,7 +72,9 @@ struct QuizView: View {
                             }
                         } else {
                             Button("OK", role: .cancel) {
-                                quizViewModel.incrementLesson()
+                                if !isPreviousQuestion {
+                                    quizViewModel.incrementLesson()
+                                }
                             }
                     }
                 } message: {
@@ -105,6 +109,6 @@ struct QuizView_Previews: PreviewProvider {
                 questionAswers: ["Vincent Van Gogh", "Leonardo Da Vinci", "Pablo Picasso"],
                 rightAnswerIndex: 1
             )
-        ]))
+        ]), isPreviousQuestion: true)
     }
 }

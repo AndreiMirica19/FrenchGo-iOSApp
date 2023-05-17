@@ -14,24 +14,16 @@ struct LessonCardView: View {
     
     var body: some View {
         VStack {
-            Text(courseName)
-                .font(.largeTitle)
-            .fontWeight(.black)
-            .foregroundColor(.white)
+            MarkerFeltWideTextView(text: courseName, textSize: 28)
+                .foregroundColor(.white)
             
-            
-            Text("Lesson \(lessonNumber)")
-                .font(.largeTitle)
-            .fontWeight(.black)
-            .foregroundColor(.white)
+            MarkelFeltThinTextView(text: "Lesson \(lessonNumber)", textSize: 24)
+                .foregroundColor(.white)
 
             Spacer()
             
-            Text(lesson.title)
-                .multilineTextAlignment(.center)
+            MarkelFeltThinTextView(text: lesson.title, textSize: 24)
                 .foregroundColor(.white)
-                .fontWeight(.black)
-                .font(.title)
             
             Spacer()
         }
@@ -45,6 +37,6 @@ struct LessonCardView: View {
 
 struct LessonCardView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonCardView(lesson: LessonDTO(title: "", text: "", quiz: QuizDTO(questions: [])), lessonNumber: 0, courseName: "")
+        LessonCardView(lesson: LessonDTO(title: "Perfect simple", text: "You learn how to", quiz: QuizDTO(questions: [])), lessonNumber: 0, courseName: "Debutant course")
     }
 }

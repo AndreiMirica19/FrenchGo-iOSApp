@@ -24,6 +24,8 @@
 		2E52F0F929FE5BBF00DB5890 /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52F0F829FE5BBF00DB5890 /* LessonView.swift */; };
 		2E52F0FD29FE607C00DB5890 /* IncrementLessonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52F0FC29FE607C00DB5890 /* IncrementLessonProtocol.swift */; };
 		2E52F0FF29FE60DA00DB5890 /* IncrementLessonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52F0FE29FE60DA00DB5890 /* IncrementLessonService.swift */; };
+		2E57799B2A14A53500D97490 /* MarkelFeltThinTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57799A2A14A53500D97490 /* MarkelFeltThinTextView.swift */; };
+		2E57799D2A14A64600D97490 /* MarkerFeltWideTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E57799C2A14A64600D97490 /* MarkerFeltWideTextView.swift */; };
 		2ECB706F29FA4B900050BA59 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB706E29FA4B900050BA59 /* ApiEndpoint.swift */; };
 		2ECB707129FA4C4B0050BA59 /* RegisterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB707029FA4C4B0050BA59 /* RegisterProtocol.swift */; };
 		2ECB707429FA4C940050BA59 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECB707329FA4C940050BA59 /* UserData.swift */; };
@@ -81,6 +83,8 @@
 		2E52F0F829FE5BBF00DB5890 /* LessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
 		2E52F0FC29FE607C00DB5890 /* IncrementLessonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementLessonProtocol.swift; sourceTree = "<group>"; };
 		2E52F0FE29FE60DA00DB5890 /* IncrementLessonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementLessonService.swift; sourceTree = "<group>"; };
+		2E57799A2A14A53500D97490 /* MarkelFeltThinTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkelFeltThinTextView.swift; sourceTree = "<group>"; };
+		2E57799C2A14A64600D97490 /* MarkerFeltWideTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerFeltWideTextView.swift; sourceTree = "<group>"; };
 		2ECB706E29FA4B900050BA59 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
 		2ECB707029FA4C4B0050BA59 /* RegisterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocol.swift; sourceTree = "<group>"; };
 		2ECB707329FA4C940050BA59 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -274,6 +278,8 @@
 				2E1A67342A067423007B4F29 /* QuestionHeaderView.swift */,
 				2E1A67362A06752F007B4F29 /* AnswersView.swift */,
 				2E1A67382A067DD6007B4F29 /* InitialQuizView.swift */,
+				2E57799A2A14A53500D97490 /* MarkelFeltThinTextView.swift */,
+				2E57799C2A14A64600D97490 /* MarkerFeltWideTextView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -387,12 +393,14 @@
 				2EFE7CE029F7D92E003A1171 /* SettingsView.swift in Sources */,
 				2ECB709529FA864B0050BA59 /* QuizView.swift in Sources */,
 				2ECB708729FA55BC0050BA59 /* LoginProtocol.swift in Sources */,
+				2E57799B2A14A53500D97490 /* MarkelFeltThinTextView.swift in Sources */,
 				2E1A67392A067DD6007B4F29 /* InitialQuizView.swift in Sources */,
 				2E1A67352A067423007B4F29 /* QuestionHeaderView.swift in Sources */,
 				2EFE7CC529F7C1E3003A1171 /* Login.swift in Sources */,
 				2E52F0EB29FE40EC00DB5890 /* CourseDifficulty.swift in Sources */,
 				2ECB709B29FA9D480050BA59 /* InitialQuizProtocol.swift in Sources */,
 				2EFE7CE929F7E364003A1171 /* ContactUsView.swift in Sources */,
+				2E57799D2A14A64600D97490 /* MarkerFeltWideTextView.swift in Sources */,
 				2EFE7CDC29F7D6AA003A1171 /* MainTabView.swift in Sources */,
 				2EFE7CDE29F7D8C3003A1171 /* HomeView.swift in Sources */,
 				2EFE7CC329F7C1E3003A1171 /* FrenchGoApp.swift in Sources */,

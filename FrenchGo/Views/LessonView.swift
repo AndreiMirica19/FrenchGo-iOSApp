@@ -9,22 +9,20 @@ import SwiftUI
 
 struct LessonView: View {
     var lesson: LessonDTO
+    var isPreviousLesson: Bool
+    
     var body: some View {
         ScrollView {
             VStack {
-                Text(lesson.title)
-                    .font(.title)
-                    .fontWeight(.black)
+                MarkerFeltWideTextView(text: lesson.title, textSize: 34)
                 
-                Text(lesson.text)
-                    .multilineTextAlignment(.leading)
-                    .font(.headline)
+                MarkelFeltThinTextView(text: lesson.text, textSize: 18)
                     .padding(.top, 16)
                 
                 NavigationLink {
-                    QuizView(quiz: lesson.quiz)
+                    QuizView(quiz: lesson.quiz, isPreviousQuestion: isPreviousLesson)
                 } label: {
-                    Text("Take Quiz")
+                    MarkelFeltThinTextView(text: "Quiz", textSize: 18)
                     
                 }.buttonStyle(.borderedProminent)
                     .tint(.green)
@@ -35,6 +33,6 @@ struct LessonView: View {
 
 struct LessonView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonView(lesson: LessonDTO(title: "title example", text: "testtttt", quiz: QuizDTO(questions: [])))
+        LessonView(lesson: LessonDTO(title: "title example", text: "testtttt", quiz: QuizDTO(questions: [])), isPreviousLesson: false)
     }
 }

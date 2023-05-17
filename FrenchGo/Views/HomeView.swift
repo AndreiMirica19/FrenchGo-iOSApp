@@ -35,21 +35,23 @@ struct HomeView: View {
                         }  else {
                             if let course = course, let userDetails = userDetails {
                                 NavigationLink {
-                                    LessonView(lesson: course.lessons[userDetails.lastLessonIndex])
+                                    LessonView(lesson: course.lessons[userDetails.lastLessonIndex], isPreviousLesson: false)
                                 } label: {
                                     LessonCardView(lesson: course.lessons[userDetails.lastLessonIndex], lessonNumber: (userDetails.lastLessonIndex + 1), courseName: course.courseName)
-                                        .frame(height: 240)
+                                        .frame(height: 180)
                                         .padding()
                                 }
                             }
                         }
                     } header: {
-                        Text("Current Lesson")
-                            .font(.title)
-                            .fontWeight(.black)
+                        MarkerFeltWideTextView(text: "Current lesson", textSize: 34)
+                            .foregroundColor(Color("DarkGreen"))
+                    } footer: {
+                        MarkelFeltThinTextView(text: "To unlock the next lesson and keep progressing, make sure to thoroughly read and understand the current lesson. Then, aim to score 80% or higher on the quiz.", textSize: 14)
+                            .foregroundColor(.gray)
                     }
                     
-                    Spacer(minLength: 72)
+                    Spacer()
                     
                     Section {
                         ScrollView(.horizontal, showsIndicators: true) {
@@ -57,9 +59,13 @@ struct HomeView: View {
                                 if let course = course, let userDetails = userDetails {
                                     ForEach(0...course.lessons.count - 1, id: \.self) { index in
                                         if index <= userDetails.lastLessonIndex {
-                                            LessonCardView(lesson: course.lessons[index], lessonNumber: (index + 1), courseName: course.courseName)
-                                                .frame(height: 180)
-                                                .padding()
+                                            NavigationLink {
+                                                LessonView(lesson: course.lessons[index], isPreviousLesson: index != userDetails.lastLessonIndex)
+                                            } label: {
+                                                LessonCardView(lesson: course.lessons[index], lessonNumber: (index + 1), courseName: course.courseName)
+                                                    .frame(height: 180)
+                                                    .padding()
+                                            }
                                         } else {
                                             LockedLessonCardView(lesson: course.lessons[index], lessonNumber: (index + 1), courseName: course.courseName)
                                                 .frame(height: 180)
@@ -71,10 +77,14 @@ struct HomeView: View {
                             }
                         }
                     } header: {
-                        Text("All lessons")
-                            .font(.title)
-                            .fontWeight(.black)
-                    }
+                        MarkerFeltWideTextView(text: "All lessons", textSize: 34)
+                            .foregroundColor(Color("DarkGreen"))
+                        
+                    } footer: {
+                        MarkelFeltThinTextView(text: "To refresh your knowledge of a previous lesson, simply read it again and retake the quiz. Rest assured, this won't affect your progress in the current lesson.", textSize: 14)
+                            .foregroundColor(.gray)
+                    }.padding(.bottom)
+                    
                 }.frame(width: .infinity)
             }.padding()
                 .onAppear {
